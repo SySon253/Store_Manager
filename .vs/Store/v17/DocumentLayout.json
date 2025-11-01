@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\Store\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B578A7D-869E-46DB-979A-CA3FC65B84C0}|Store\\Store.csproj|g:\\store\\store\\views\\products\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4B578A7D-869E-46DB-979A-CA3FC65B84C0}|Store\\Store.csproj|solutionrelative:store\\views\\products\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B578A7D-869E-46DB-979A-CA3FC65B84C0}|Store\\Store.csproj|g:\\store\\store\\views\\products\\productbycart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4B578A7D-869E-46DB-979A-CA3FC65B84C0}|Store\\Store.csproj|solutionrelative:store\\views\\products\\productbycart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Shop.cshtml",
+              "DocumentMoniker": "G:\\Store\\Store\\Views\\Products\\Shop.cshtml",
+              "RelativeDocumentMoniker": "Store\\Views\\Products\\Shop.cshtml",
+              "ToolTip": "G:\\Store\\Store\\Views\\Products\\Shop.cshtml",
+              "RelativeToolTip": "Store\\Views\\Products\\Shop.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-01T14:07:59.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductByCart.cshtml",
+              "DocumentMoniker": "G:\\Store\\Store\\Views\\Products\\ProductByCart.cshtml",
+              "RelativeDocumentMoniker": "Store\\Views\\Products\\ProductByCart.cshtml",
+              "ToolTip": "G:\\Store\\Store\\Views\\Products\\ProductByCart.cshtml",
+              "RelativeToolTip": "Store\\Views\\Products\\ProductByCart.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-01T14:07:53.876Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

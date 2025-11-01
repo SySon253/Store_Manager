@@ -1,0 +1,304 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ZMobile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark" href="">FAQs</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Help</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Support</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-dark pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="/Home" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Z</span>Mobile</h1>
+                </a>
+            </div>
+            <div class="col-lg-6 col-6 text-left">
+                <form id="search-form">
+                    <div class="input-group">
+                        <input type="text" id="search-keywords" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+
+            <div class="col-lg-3 col-6 text-right">
+                <p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p>Hello @User.Identity.Name</p>
+                    }
+
+                </p>
+                @await Component.InvokeAsync("CartWidget")
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid mb-5">
+        <div class="row border-top px-xl-5">
+            @await Component.InvokeAsync("Navbar")
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Z</span>Mobile</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+
+                        @{
+                            var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                            var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+                        }
+
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="/" class="nav-item nav-link @(currentController == "Home" ? "active" : "")">Home</a>
+
+                            <a href="/Products/Shop" class="nav-item nav-link @(currentController == "Products" && currentAction == "Shop" ? "active" : "")">Shop</a>
+
+
+                            <div class="nav-item dropdown @(currentController == "Cart" ? "active" : "")">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="/Cart" class="dropdown-item @(currentController == "Cart" && currentAction == "Index" ? "active" : "")">Shopping Cart</a>
+                                    <a href="/Checkout" class="dropdown-item @(currentController == "Checkout" && currentAction == "Checkout" ? "active" : "")">Checkout</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="navbar-nav ml-auto py-0">
+                            @if (User.Identity.IsAuthenticated)
+                            {<a href="/Admin/Admin/Index" class="nav-item nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                                </svg>
+                                My Account
+                                 </a>
+                                <a href="/User/Logout" class="nav-item nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+                                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
+                                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z" />
+                                </svg>
+                                Logout</a>
+
+                            }
+                            else
+                            {<a href="/User/Login" class="nav-item nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
+                                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                                </svg>Login
+                                </a>
+                                <a href="/User/Register" class="nav-item nav-link">Register</a>
+                            }
+
+                            
+                        </div>
+                    </div>
+                </nav>
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="height: 500px;">
+                            <img class="img-fluid" src="/img/asus.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 500px;">
+                            <img class="img-fluid" src="/img/dell.png" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 500px;">
+                            <img class="img-fluid" src="/img/iphone.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 500px;">
+                            <img class="img-fluid" src="/img/msi.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Featured Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured End -->
+    <!-- Categories Start -->
+    
+    <!-- Categories End -->
+    <!-- Offer Start -->
+    
+    <!-- Offer End -->
+    <!-- Products Start -->
+    @RenderBody()
+    <!-- Products End -->
+    
+    <!-- Products Start -->
+    
+    <!-- Products End -->
+    <!-- Vendor Start -->
+    
+    <!-- Vendor End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">Z</span>Mobile</h1>
+                </a>
+                <p>Khám phá thế giới công nghệ ngay trong tầm tay! Mua điện thoại, laptop, phụ kiện chính hãng – nhận ưu đãi độc quyền và giao hàng tận nơi.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>3 Đ. Cầu Giấy, Đống Đa, Hà Nội </p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>utc@example.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="/Home"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="/Products/Shop"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="/Cart"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-dark mb-2" href="/Checkout"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row border-top border-light mx-xl-5 py-4">
+            
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
