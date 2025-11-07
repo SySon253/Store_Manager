@@ -54,7 +54,7 @@
                         <input type="checkbox" class="custom-control-input" value="all" checked="" id="brand-all">
                         <label class="custom-control-label" for="brand-all">All</label>
                     </div>
-                    @{
+                    @* @{
                         // Lấy danh sách brand duy nhất
                         var uniqueBrands = Model.Products
                         .Select(p => p.Brand)
@@ -68,8 +68,45 @@
                             <input type="checkbox" class="custom-control-input" value="@brand.BrandName" id="@brand.BrandId">
                             <label class="custom-control-label" for="@brand.BrandId">@brand.BrandName</label>
                         </div>
-                    }
-
+                    } *@
+                    <form>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="Apple" id="brand-1">
+                            <label class="custom-control-label" for="brand-1">Apple</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="SamSung" id="brand-2">
+                            <label class="custom-control-label" for="brand-2">SamSung</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="Xiaomi" id="brand-3">
+                            <label class="custom-control-label" for="brand-3">Xiaomi</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="Oppo" id="brand-3">
+                            <label class="custom-control-label" for="brand-3">Oppo</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="MSI" id="brand-4">
+                            <label class="custom-control-label" for="brand-4">MSI</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="ASUS" id="brand-5">
+                            <label class="custom-control-label" for="brand-5">ASUS</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="DELL" id="brand-6">
+                            <label class="custom-control-label" for="brand-6">DELL</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="HUAWEI" id="brand-7">
+                            <label class="custom-control-label" for="brand-7">HUAWEI</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input brand-checkbox" value="GARMIN" id="brand-8">
+                            <label class="custom-control-label" for="brand-8">GARMIN</label>
+                        </div>
+                    </form>
 
                 </form>
             </div>
