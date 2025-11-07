@@ -1,0 +1,39 @@
+# Visual Studio
+.vs/
+*.dbmdl
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]emp/
+
+# NuGet Packages
+*.nupkg
+packages/
+*.snupkg
+# Uncomment if you have NuGet Package Restore turned on
+# !packages/build/
+
+# Visual Studio Code
+.vscode/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Others
+*.log
+*.tlog
+*.cache
+*.pdb
+*.tmp
+*.bak
+
+# Rider / JetBrains
+.idea/
+*.sln.iml

@@ -1,0 +1,165 @@
+﻿
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+
+            <div class="card shadow border-0 rounded-4 text-center overflow-hidden">
+                <!-- Header -->
+                <div class="bg-gradient-theme text-white py-4">
+                    <i class="bi bi-check-circle-fill fs-1"></i>
+                    <h3 class="mt-3 mb-0 fw-bold text-uppercase">Thanh toán thành công!</h3>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body p-5 bg-light">
+                    <p class="fs-5 mb-4 text-muted">
+                        Cảm ơn bạn đã mua hàng tại <strong class="text-theme">ZMobile</strong> 💖
+                        Đơn hàng của bạn đang được xử lý và sẽ sớm được giao đến bạn!
+                    </p>
+
+                    <div class="success-animation mb-4">
+                        <div class="checkmark">
+                            <div class="checkmark-circle"></div>
+                            <div class="checkmark-stem" style="margin-top: 9px;"></div>
+                            <div class="checkmark-kick"></div>
+                        </div>
+                    </div>
+
+                    <a href="/" class="btn btn-theme w-100 py-3 fw-semibold text-uppercase shadow-sm mt-2">
+                        <i class="bi bi-house-door me-2"></i> Về trang chủ
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <div class="card-footer text-center bg-white py-3 small text-muted">
+                    Cảm ơn bạn đã tin tưởng <strong class="text-theme">ZMobile</strong> 💕
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    :root {
+        --theme-color: #D19C97;
+        --theme-color-dark: #b67872;
+        --theme-color-light: #f2d3cf;
+    }
+
+    .text-theme {
+        color: var(--theme-color) !important;
+    }
+
+    .bg-gradient-theme {
+        background: linear-gradient(135deg, var(--theme-color), var(--theme-color-dark));
+    }
+
+    .btn-theme {
+        background: linear-gradient(90deg, var(--theme-color), var(--theme-color-dark));
+        color: #fff;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+        .btn-theme:hover {
+            background: linear-gradient(90deg, var(--theme-color-dark), var(--theme-color));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            color: #fff;
+        }
+
+    .success-animation {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+    }
+
+    .checkmark {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: block;
+        box-sizing: content-box;
+        border: 5px solid var(--theme-color);
+        animation: pulse 1.5s infinite;
+    }
+
+    .checkmark-circle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        background: var(--theme-color-light);
+    }
+
+    .checkmark-stem {
+        position: absolute;
+        width: 5px;
+        height: 30px;
+        background-color: var(--theme-color-dark);
+        left: 47px;
+        top: 25px;
+        transform: rotate(45deg);
+        border-radius: 2px;
+        animation: drawStem 0.3s ease-out 0.4s forwards;
+        opacity: 0;
+    }
+
+    .checkmark-kick {
+        position: absolute;
+        width: 5px;
+        height: 15px;
+        background-color: var(--theme-color-dark);
+        left: 35px;
+        top: 47px;
+        transform: rotate(-45deg);
+        border-radius: 2px;
+        animation: drawKick 0.3s ease-out 0.7s forwards;
+        opacity: 0;
+    }
+
+    @@keyframes drawStem {
+        0%
+
+    {
+        opacity: 0;
+        height: 0;
+    }
+
+    100% {
+        opacity: 1;
+        height: 30px;
+    }
+
+    }
+
+    @@keyframes drawKick {
+        0% {
+            opacity: 0;
+            height: 0;
+        }
+
+        100% {
+            opacity: 1;
+            height: 15px;
+        }
+    }
+
+    @@keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(209,156,151, 0.5);
+        }
+
+        70% {
+            box-shadow: 0 0 0 20px rgba(209,156,151, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(209,156,151, 0);
+        }
+    }
+</style> 
