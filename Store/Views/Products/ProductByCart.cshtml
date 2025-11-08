@@ -54,21 +54,6 @@
                         <input type="checkbox" class="custom-control-input" value="all" checked="" id="brand-all">
                         <label class="custom-control-label" for="brand-all">All</label>
                     </div>
-                    @* @{
-                        // Lấy danh sách brand duy nhất
-                        var uniqueBrands = Model.Products
-                        .Select(p => p.Brand)
-                        .GroupBy(b => b.BrandId)
-                        .Select(g => g.First())
-                        .ToList();
-                    }
-                    @foreach (var brand in uniqueBrands)
-                    {
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" value="@brand.BrandName" id="@brand.BrandId">
-                            <label class="custom-control-label" for="@brand.BrandId">@brand.BrandName</label>
-                        </div>
-                    } *@
                     <form>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input brand-checkbox" value="Apple" id="brand-1">
